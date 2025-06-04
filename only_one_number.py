@@ -10,15 +10,12 @@
 
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
-        count = 0
-        for i in range(len(nums)):
-            for j in range(i,len(nums)):
-                if nums[i] == nums[j]:
-                    continue
-                else:
-                    return nums[i]
+        result = 0
+        for num in nums:
+            result ^= num
+        return result
             
-nums = [4,1,2,1,2]
+nums = [4,1,2,1,2,4,5]
 So = Solution()
 ret = So.singleNumber(nums)
 print(ret)
